@@ -13,6 +13,16 @@ html(lang="en")
 	body
 		header.hsl-header
 		content.hsl-content
+			each hue in hues
+				div.hue
+					each saturation in saturations
+						div.saturation
+							each lightness in lightnesses
+								div
+									- let classname = `hsl-${hue}-${saturation}-${lightness}`;
+									- let text = `${hue} ${saturation} ${lightness}`;
+									div(class=classname)
+									p= text
 		footer.hsl-footer
 
 

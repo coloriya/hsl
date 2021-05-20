@@ -7,6 +7,20 @@ const template = pug.compileFile(pugPath);
 
 const htmlPath = "docs/index.html";
 
-fs.writeFileSync(htmlPath, template());
+function getArray (max, step) {
+	let arr = [];
+	for (let x = 0; x <= max; x += step) {
+		arr.push(x);
+	}
+	return arr;
+}
+
+const props = {
+	hues: getArray(360, 10),
+	saturations: getArray(100, 20),
+	lightnesses: getArray(100, 10),
+}
+
+fs.writeFileSync(htmlPath, template(props));
 
 
