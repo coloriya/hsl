@@ -1,0 +1,58 @@
+
+body {
+	text-align: center;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 
+		"San Francisco", "Segoe UI", Roboto, Ubuntu, 
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+div.hue > div.saturation > div {
+	display: inline-block;
+	width: 100px;
+	& > div {
+		height: 50px;
+		padding: 20px 5px;
+		border: 1px solid #777;
+	}
+	& > p {
+		font-size: 14px;
+		font-weight: bold;
+		padding: 2px;
+		color: #777;
+		margin: 0;
+	}
+}
+
+div.hue {
+	padding: 100px 50px;
+	border-bottom: 2px solid #777;
+	&:nth-child(even) {
+		background-color: #f7f7f7;
+	}
+	& > div.saturation {
+		padding: 5px;
+		& > div {
+			margin: 2px;
+		}
+	}
+}
+
+@for $hue from 0 through 36 {
+	$hue: $hue * 10;
+	@for $saturation from 0 through 5 {
+		$saturation: $saturation * 20;
+		@for $lightness from 0 through 10 {
+			$lightness: $lightness * 10;
+			div.hsl-#{$hue}-#{$saturation}-#{$lightness} {
+				background-color: hsl($hue, $saturation, $lightness);
+			}
+		}
+	}
+}
+
+
