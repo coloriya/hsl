@@ -17,7 +17,7 @@ function getArray (max, step) {
 
 const props = {
 	hues: getArray(360, 10),
-	saturations: getArray(100, 20),
+	saturations: getArray(100, 10),
 	lightnesses: getArray(100, 10),
 }
 

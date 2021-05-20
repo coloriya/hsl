@@ -15,6 +15,8 @@ html(lang="en")
 		content.hsl-content
 			each hue in hues
 				div.hue
+					div.title
+						h1 Hue = #{hue}&deg;
 					div.row.header
 						div.label
 						each lightness in lightnesses
@@ -26,13 +28,12 @@ html(lang="en")
 							div.label
 								- let text = `S = ${saturation}%`;
 								b= text
-								p
+								//- p
 							each lightness in lightnesses
 								div
 									- let classname = `hsl-${hue}-${saturation}-${lightness}`;
-									- let text = `${hue} ${saturation} ${lightness}`;
 									b(class=classname)
-									p= text
+									//- p RGB
 		footer.hsl-footer
 
 
