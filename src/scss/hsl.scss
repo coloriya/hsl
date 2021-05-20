@@ -1,4 +1,7 @@
 
+$box-width: 80px;
+$box-height: 50px;
+
 body {
 	text-align: center;
 	margin: 0;
@@ -13,10 +16,10 @@ div {
 
 div.hue > div.saturation > div {
 	display: inline-block;
-	width: 100px;
-	& > div {
-		height: 50px;
-		padding: 20px 5px;
+	width: $box-width;
+	& > b {
+		display: block;
+		height: $box-height;
 		border: 1px solid #777;
 	}
 	& > p {
@@ -34,7 +37,21 @@ div.hue {
 	&:nth-child(even) {
 		background-color: #f7f7f7;
 	}
-	& > div.saturation {
+	& > div.row.header {
+		& > div.label {
+			display: inline-block;
+			width: $box-width;
+			margin: 2px;
+			& > b {
+				display: block;
+				font-size: 14px;
+				font-weight: bold;
+				padding: 10px 5px;
+				border: 1px solid #777;
+			}
+		}
+	}
+	& > div.row.saturation {
 		padding: 5px;
 		& > div {
 			margin: 2px;
@@ -48,7 +65,7 @@ div.hue {
 		$saturation: $saturation * 20;
 		@for $lightness from 0 through 10 {
 			$lightness: $lightness * 10;
-			div.hsl-#{$hue}-#{$saturation}-#{$lightness} {
+			.hsl-#{$hue}-#{$saturation}-#{$lightness} {
 				background-color: hsl($hue, $saturation, $lightness);
 			}
 		}

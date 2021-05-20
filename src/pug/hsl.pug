@@ -15,13 +15,18 @@ html(lang="en")
 		content.hsl-content
 			each hue in hues
 				div.hue
+					div.row.header
+						each lightness in lightnesses
+							- let text = `L = ${lightness}%`;
+							div.label
+								b= text
 					each saturation in saturations
-						div.saturation
+						div.row.saturation
 							each lightness in lightnesses
 								div
 									- let classname = `hsl-${hue}-${saturation}-${lightness}`;
 									- let text = `${hue} ${saturation} ${lightness}`;
-									div(class=classname)
+									b(class=classname)
 									p= text
 		footer.hsl-footer
 
