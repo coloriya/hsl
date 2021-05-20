@@ -47,10 +47,12 @@ div.hue > div.row.header > div.label > b {
   border: 1px solid #000;
 }
 div.hue > div.row.saturation {
-  margin-bottom: -1px;
+  margin-top: -1px;
 }
 div.hue > div.row.saturation > div.label > b {
-  padding: 15px 5px;
+  padding: 15px 10px;
+  padding-right: 5px;
+  text-align: left;
 }
 div.hue > div.row.saturation > div {
   margin: 0px;

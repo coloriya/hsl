@@ -58,10 +58,12 @@ div.hue {
 	}
 	& > div.row.saturation {
 		// padding-top: 5px;
-		margin-bottom: -1px;
+		margin-top: -1px;
 		& > div.label {
 			& > b {
-				padding: 15px 5px;
+				padding: 15px 10px;
+				padding-right: 5px;
+				text-align: left;
 			}
 		}
 		& > div {
