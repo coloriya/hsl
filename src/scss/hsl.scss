@@ -4,18 +4,20 @@ $box-height: 50px;
 
 body {
 	text-align: center;
+	font-size: 14px;
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 
 		"San Francisco", "Segoe UI", Roboto, Ubuntu, 
 		"Helvetica Neue", Arial, sans-serif;
 }
 
-div {
+div, b, p {
 	box-sizing: border-box;
 }
 
 div.hue > div.saturation > div {
 	display: inline-block;
+	vertical-align: top;
 	width: $box-width;
 	& > b {
 		display: block;
@@ -23,7 +25,6 @@ div.hue > div.saturation > div {
 		border: 1px solid #777;
 	}
 	& > p {
-		font-size: 14px;
 		font-weight: bold;
 		padding: 2px;
 		color: #777;
@@ -53,6 +54,11 @@ div.hue {
 	}
 	& > div.row.saturation {
 		padding: 5px;
+		& > div.label {
+			& > b {
+				padding: 15px 5px;
+			}
+		}
 		& > div {
 			margin: 2px;
 		}

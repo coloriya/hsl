@@ -16,12 +16,17 @@ html(lang="en")
 			each hue in hues
 				div.hue
 					div.row.header
+						div.label
 						each lightness in lightnesses
 							- let text = `L = ${lightness}%`;
 							div.label
 								b= text
 					each saturation in saturations
 						div.row.saturation
+							div.label
+								- let text = `S = ${saturation}%`;
+								b= text
+								p
 							each lightness in lightnesses
 								div
 									- let classname = `hsl-${hue}-${saturation}-${lightness}`;
