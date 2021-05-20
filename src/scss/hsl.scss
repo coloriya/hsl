@@ -80,7 +80,7 @@ div.hue {
 			$lightness: $lightness * 10;
 			.hsl-#{$hue}-#{$saturation}-#{$lightness} {
 				$rgb-color: hsl($hue, $saturation, $lightness);
-				background-color: $rgb-color;
+				background: $rgb-color;
 			}
 		}
 	}
